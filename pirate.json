@@ -1,0 +1,117 @@
+{
+  "rooms":[
+  {
+    "id":"dock",
+    "desc":"You find yourself on a dark and misty dock. The sound of creaking ships fills the air. You can see a pirate city Tortuga, and to the west is the open sea.",
+    "exits":{"Tortuga": "town", "tortuga": "town", "sea": "sea", "west": "sea" }
+  },
+  {
+    "id":"town",
+    "desc":"The bustling pirate town is filled with shady characters. There is a small tavern to the south.",
+    "exits":{"west": "dock", "back": "dock", "south": "tavern", "tavern": "tavern"}
+  },
+  {
+    "id":"sea",
+    "desc":"The open sea stretches out before you. A small boat is moored to the east, and you can see a distant island to the south.",
+    "exits":{"east": "dock", "boat": "dock", "back": "dock", "south": "island", "island": "island" }
+  },
+  {
+    "id":"tavern",
+    "desc":"The dimly lit tavern is filled with the smell of rum. A pirate with a treasure map is to the west, and the town is to the north.",
+    "exits":{"north": "town", "back": "town", "tortuga": "town", "Tortuga": "town", "west": "pirate", "pirate": "pirate" }
+  },
+  {
+    "id":"pirate",
+    "desc":"A grizzled pirate with an eyepatch stands before you. He seems to be guarding a valuable treasure map.",
+    "exits":{"east": "tavern", "back": "tavern", "boat": "dock"}
+  },
+  {
+    "id":"island",
+    "desc":"You reach a mysterious island with dense vegetation. You can see some weird entrance far away.",
+    "exits":{ "far away": "cave", "north": "sea", "sea": "sea", "back": "sea"}
+  },
+  {
+    "id":"cave",
+    "desc":"The cave is dark and damp. There was a flash of silver in the distance. You feel a strange power coming from the strange teleport.",
+    "exits":{ "east": "island", "back": "island", "teleport": "dock"}
+  }
+  ],
+  "objects":[
+  {
+    "id":"gun",
+    "desc":"It looks like you can use it to shoot and kill things.",
+    "initialroom":"town"
+  },
+  {
+    "id":"bullet",
+    "desc":"This is single bullet that can be used with the gun.",
+    "initialroom":"dock"
+  },
+  {
+    "id":"sword",
+    "desc":"A sharp cutlass lies on the table. It can be used to fight enemies.",
+    "initialroom":"dock"
+  },
+  {
+    "id":"key",
+    "desc":"A rusty key lies on the ground. It might unlock something valuable.",
+    "initialroom":"cave"
+  },
+  {
+    "id":"map",
+    "desc":"Map shows a path to hidden treasure, you should start searching from place where you dock your boat.",
+    "initialroom":"pirate"
+  },
+  {
+    "id": "Gold of the Pirate",
+    "desc": "Glittering and precious treasure Gold of the Pirate!.",
+    "initialroom": "chest"
+  }
+  ],
+  "treasure": [
+    {
+      "id": "chest",
+      "desc": "The chest, covered in mud, probably contains many valuables.",
+      "initialroom": "island",
+      "openwith": ["key"],
+      "contents": ["Gold of the Pirate"]
+    }
+  ],
+  "food":[
+  {
+    "id":"orange",
+    "desc":"The orange looks delicious, you are sure it tastes even better. ",
+    "initialroom":"island",
+    "regeneration":25
+  },
+  {
+    "id":"rum",
+    "desc":"It will definietly help to relive the pain.",
+    "initialroom":"tavern",
+    "regeneration":80
+  }
+  ],
+  "enemies":[
+  {
+    "id":"skeleton",
+    "desc":"A skeletal pirate with a rusty cutlass appears! It looks hostile.",
+    "aggressiveness":45,
+    "initialroom":"tavern",
+    "killedby":["sword"]
+  },
+  {
+    "id":"siren",
+    "desc":"A beautiful women with a fish tail? Can be very dangerous.",
+    "aggressiveness":99,
+    "initialroom":"island",
+    "killedby":["gun","bullet"]
+  }
+  ],
+  "player":{
+    "initialroom":"dock"
+  },
+  "objective":{
+    "type":"collect",
+    "what":["Gold of the Pirate"]
+  }
+}
