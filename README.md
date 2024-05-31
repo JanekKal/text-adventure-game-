@@ -10,20 +10,26 @@ Please, feel free to use the "pirate.json" map to explore the pirate world.
 In the game there are features and functions as:
 
 ###Simple features:
+
 Descrtiption of location:
     After entering a location or writing a "look" command, the description of location will be prompted to the user.
+    
 Description of items:
     Every specific object, location and enemy have their own description.
     User by using the command "look xxx" can see the description of the specified requirement.
+    
 Taking items:
     Within different location there are many objects that could be picked by the user.
     Command "take xxx" allow user to collect the items into the inventory.
+    
 Getting inventory:
     User can see their inventory using "inventory" command to see what items are collected.
+    
 Navigation through map:
     User can change the locations using the "go xxx" command, that will take the user into another location.
     
 ###Advanced features:
+
 Health points & combat as function to hanadle enemy attack and reduce health points:
     Player will gain [HP: 100/100] health points at the beginning of the game. 
     During the fight with enemy, if the player do not have specific objects to kill the enemy, the damage to player will be given.
@@ -36,6 +42,7 @@ Examples:
     The information will be printed that: 
     "The enemy attacked you and caused x damage.
     You currently have [HP: 100-x/100]"
+    
 Escaping from room:
     If the player could not killed the enemy, he need to find the specific objects to kill. However, if the player tries to leave without killing enemy first, the enemy will attack - which cause dying imadietly - and whether it succeeds depends on its aggressiveness.
 Health points allow the player to play longer if he is lucky enough to leave rooms where the enemy is still alive.
